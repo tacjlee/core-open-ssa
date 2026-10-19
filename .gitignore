@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Build artifacts
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# OpenSSA runtime cache
+**/.openssa/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
