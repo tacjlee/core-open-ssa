@@ -27,6 +27,14 @@ from .core.util.lm.huggingface import HuggingFaceLM
 from .core.util.lm.llama import LlamaLM
 from .core.util.lm.openai import OpenAILM
 
+# --- core-open-ssa additions (keep in this marked block for clean upstream merges) ---
+# Model-agnostic LLM selection: a generic OpenAI-compatible LLM + a provider registry, so the
+# model behind an agent is chosen by config (build_llm) rather than hardcoded imports.
+# (Upstream's BaseLM/OpenAILM/LMConfig keep their "LM" names; new code uses "LLM".)
+from .core.util.lm.openai_compat import OpenAICompatLLM
+from .core.util.lm.registry import build_llm, register_llm, available_llm_providers
+# --- end core-open-ssa additions ---
+
 
 # Vendored as the `core-open-ssa` distribution (import namespace kept as `openssa`).
 # Resolve the version from whichever distribution name provides this package, falling
